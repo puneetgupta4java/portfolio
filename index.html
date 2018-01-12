@@ -364,12 +364,59 @@ img.a1 {
     .vis{
         display: block;
     }
+    .mainloader{
+        position: fixed;
+        left: 0; 
+        top: 0;
+        z-index: 99999; 
+        width: 100%;
+        height: 100%; 
+        overflow: visible;
+        align-content: center;
+        color: #111;
+        background-color: #d5d5d5;
+    }
+    .spinner{
+	width: 100px;
+	height: 100px;
+	background: #d5d5d5;
+	border-radius: 50%;
+	margin:auto auto;
+	border:5px solid transparent;
+	border-top-color: red;
+	border-bottom-color: red;
+	animation: spinny 1s linear infinite;
+}
+    @keyframes spinny{
+	0%{
+		transform: rotate(0deg) scale(1);
+	}
+	50%{
+		transform: rotate(45deg) scale(1.2);
+	}
+	100%{
+		transform: rotate(360deg) scale(1);
+	}
+}
+    .load_text{
+          color: #fff;
+             text-align: center;
+             font-size: 20px;
+             padding-top: 4%;
+    }
 </style>
 </head>
 
 <body style="width: 1349px;">
-   
-   <!--Loader-->
+   <!--loader-->
+    
+    <div class="mainloader">
+    <div class="spinner"></div>
+        <div class="load_text">Its loading.....!!</div>
+    </div>
+    
+    <!--loader end-->
+   <!--effect-->
    
    <div class="main">
 <div class='container1'>
@@ -395,7 +442,7 @@ img.a1 {
     </div>
 
    
-   <!--loader end-->
+   <!--effect end-->
 <!--new nav-->
      
     
@@ -754,7 +801,7 @@ I am involved in various college level co-curricular activities and love event m
 				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a>
+<a href="https://en.wikipedia.org/wiki/Carl_Jung">Steve Jobs</a>
 
                   </p>
 
@@ -886,7 +933,10 @@ I am involved in various college level co-curricular activities and love event m
       
       
       $(document).ready(function(){
-        
+        $(".mainloader").addClass("hide");
+                $(".spinner").addClass("hide");
+                $(".load_text").addClass("hide");
+
   $(window).scroll(function() {
     if ($(document).scrollTop() > 1680) {
         $(".e1").addClass("photoshop");
